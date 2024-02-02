@@ -1,0 +1,880 @@
+-------------------- m8_r8_t32_h2 @ v10_e42_t97 : -p 0 --------------------
+m: 8 t: 32 qs: 3 pn: 3 cn: 1
+equivalence classes:
+0: 0 1 2 
+conditions:
+0 1
+0 2
+1 2
+========= P0 =========
+vertex count: 3 edge count: 3
+0: 1 2 
+1: 0 2 
+2: 0 1 
+conditions: 
+0: LESS_THAN(1), LESS_THAN(2), 
+1: LAGER_THAN(0), LESS_THAN(2), 
+2: LAGER_THAN(0), LAGER_THAN(1), 
+========= Pattern =========
+root: 0 hop: 2 degree: 2
+search sequence:
+0 1 2 
+back connectivity:
+0: 
+1: 0 
+2: 0 1 
+compute execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),
+======= Plan Pattern =======
+vertex count: 3 edge count: 3
+execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE_COUNT,2),
+materialized vertices:()
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:(1)
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:()
+start read csr bin file....
+uintV_size=4,uintE_size=8
+vertex_count=10,edge_count=84
+finish read csr bin file, elapsed_time=0.036ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.037000ms
+max partitioned sources num: 10
+finish view bin buffer, elapsed_time=6063.445000ms
+producer 0 gets 0
+view bin 0: sources 10 vertices 10 edges 84
+finish view bin materialized 0, elapsed_time=10.371000ms
+producer 0 produces 0 in 0
+available mem: 10854
+available mem after: 10854
+finish device 0 executor construction, elapsed_time=11.670000ms
+consumer 0 gets 0
+device 0 transfer view bin 0
+available mem for imdata: 10854
+finish device 0 memory copy, elapsed_time=0.114000ms
+consumer 0 completes transfer 0
+
+
+Current process: MATERIALIZE 0
+Instances: 
+instances[0] NULL
+instances[1] NULL
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+
+
+Current process: COMPUTE 1
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+
+
+Current process: MATERIALIZE 2
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+
+
+Current process: COMPUTE_COUNT 3
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+finish device 0 match, elapsed_time=8.855000ms
+consumer 0 completes match 0
+consumer 0 stops
+finish total time, elapsed_time=21.088000ms
+total count for query 0: 97
+-------------------- m8_r8_t32_h2 @ v10_e42_t97 : -p 2 --------------------
+m: 8 t: 32 qs: 3 pn: 3 cn: 1
+equivalence classes:
+0: 0 1 
+2: 2 3 
+conditions:
+0 1
+2 3
+========= P2 =========
+vertex count: 4 edge count: 5
+0: 1 2 3 
+1: 0 2 3 
+2: 0 1 
+3: 0 1 
+conditions: 
+0: LESS_THAN(1), 
+1: LAGER_THAN(0), 
+2: LESS_THAN(3), 
+3: LAGER_THAN(2), 
+========= Pattern =========
+root: 0 hop: 2 degree: 3
+search sequence:
+0 1 2 3 
+back connectivity:
+0: 
+1: 0 
+2: 0 1 
+3: 0 1 
+compute execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),(COMPUTE,3),
+======= Plan Pattern =======
+vertex count: 4 edge count: 5
+execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),(COMPUTE_COUNT,3),
+materialized vertices:()
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:(1)
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:()
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:(2)
+start read csr bin file....
+uintV_size=4,uintE_size=8
+vertex_count=10,edge_count=84
+finish read csr bin file, elapsed_time=0.029ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.027000ms
+max partitioned sources num: 10
+finish view bin buffer, elapsed_time=5427.776000ms
+producer 0 gets 0
+view bin 0: sources 10 vertices 10 edges 84
+finish view bin materialized 0, elapsed_time=10.757000ms
+producer 0 produces 0 in 0
+available mem: 10854
+available mem after: 10854
+finish device 0 executor construction, elapsed_time=12.159000ms
+consumer 0 gets 0
+device 0 transfer view bin 0
+available mem for imdata: 10854
+finish device 0 memory copy, elapsed_time=0.136000ms
+consumer 0 completes transfer 0
+
+
+Current process: MATERIALIZE 0
+Instances: 
+instances[0] NULL
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: COMPUTE 1
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: MATERIALIZE 2
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: COMPUTE 3
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: COMPUTE_COUNT 4
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=42, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] NULL
+finish device 0 match, elapsed_time=5.509000ms
+consumer 0 completes match 0
+consumer 0 stops
+finish total time, elapsed_time=18.314000ms
+total count for query 0: 876
+-------------------- m8_r8_t32_h2 @ v10_e42_t97 : -p 4 --------------------
+m: 8 t: 32 qs: 3 pn: 3 cn: 1
+equivalence classes:
+0: 0 1 
+2: 2 
+3: 3 4 
+conditions:
+0 1
+========= P4 =========
+vertex count: 5 edge count: 6
+0: 1 2 3 
+1: 0 2 4 
+2: 0 1 
+3: 0 4 
+4: 1 3 
+conditions: 
+0: LESS_THAN(1), 
+1: LAGER_THAN(0), 
+2: 
+3: 
+4: 
+========= Pattern =========
+root: 0 hop: 2 degree: 3
+search sequence:
+0 1 2 3 4 
+back connectivity:
+0: 
+1: 0 
+2: 0 1 
+3: 0 
+4: 1 3 
+compute execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),(COMPUTE,3),(MATERIALIZE,3),(COMPUTE,4),
+======= Plan Pattern =======
+vertex count: 5 edge count: 6
+execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),(COMPUTE,3),(MATERIALIZE,3),(FILTER_COMPUTE,2),(COMPUTE_COUNT,4),
+materialized vertices:()
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:(1)
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:()
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:(2)
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:(2,3)
+materialized vertices:(0,1,3)
+computed_unmaterialized_vertices:(2)
+materialized vertices:(0,1,3)
+computed_unmaterialized_vertices:(2)
+start read csr bin file....
+uintV_size=4,uintE_size=8
+vertex_count=10,edge_count=84
+finish read csr bin file, elapsed_time=0.022ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.024000ms
+max partitioned sources num: 10
+finish view bin buffer, elapsed_time=5760.788000ms
+producer 0 gets 0
+view bin 0: sources 10 vertices 10 edges 84
+finish view bin materialized 0, elapsed_time=5.974000ms
+producer 0 produces 0 in 0
+available mem: 10854
+available mem after: 10854
+finish device 0 executor construction, elapsed_time=8.214000ms
+consumer 0 gets 0
+device 0 transfer view bin 0
+available mem for imdata: 10854
+finish device 0 memory copy, elapsed_time=0.109000ms
+consumer 0 completes transfer 0
+
+
+Current process: MATERIALIZE 0
+Instances: 
+instances[0] NULL
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 1
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: MATERIALIZE 2
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 3
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 4
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=42, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: MATERIALIZE 5
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=42, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+candidates_index[3] size=42, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] size=43, 0 7 14 21 28 35 42 49 56 63 70 77 84 91 98 105 111 117 123 129 135 141 149 157 165 173 181 189 197 205 213 221 229 236 243 250 257 265 273 281 289 297 305
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] size=305, 3 4 5 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 1 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 0 3 4 6 7 8 9 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 1 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 1 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 2 4 5 6 7 8 0 1 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 2 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 2 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 2 3 4 5 6 8 0 1 2 3 4 5 6 7
+candidates[4] NULL
+
+
+Current process: FILTER_COMPUTE 6
+Instances: 
+instances[0] size=305, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8
+instances[1] size=305, 1 1 1 1 1 1 1 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 2 2 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 8 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+instances[2] NULL
+instances[3] size=305, 3 4 5 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 1 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 0 3 4 6 7 8 9 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 1 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 1 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 2 4 5 6 7 8 0 1 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 2 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 2 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 2 3 4 5 6 8 0 1 2 3 4 5 6 7
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=305, 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 10 10 10 10 10 10 10 11 11 11 11 11 11 11 12 12 12 12 12 12 12 13 13 13 13 13 13 13 14 14 14 14 14 14 14 15 15 15 15 15 15 16 16 16 16 16 16 17 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 21 21 21 21 22 22 22 22 22 22 22 22 23 23 23 23 23 23 23 23 24 24 24 24 24 24 24 24 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 26 27 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 31 32 32 32 32 32 32 32 33 33 33 33 33 33 33 34 34 34 34 34 34 34 35 35 35 35 35 35 35 36 36 36 36 36 36 36 36 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 40 40 40 40 40 40 40 40 41 41 41 41 41 41 41 41
+candidates_index[3] size=305, 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 10 10 10 10 10 10 10 11 11 11 11 11 11 11 12 12 12 12 12 12 12 13 13 13 13 13 13 13 14 14 14 14 14 14 14 15 15 15 15 15 15 16 16 16 16 16 16 17 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 21 21 21 21 22 22 22 22 22 22 22 22 23 23 23 23 23 23 23 23 24 24 24 24 24 24 24 24 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 26 27 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 31 32 32 32 32 32 32 32 33 33 33 33 33 33 33 34 34 34 34 34 34 34 35 35 35 35 35 35 35 36 36 36 36 36 36 36 36 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 40 40 40 40 40 40 40 40 41 41 41 41 41 41 41 41
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] size=43, 0 7 14 21 28 35 42 49 56 63 70 77 84 91 98 105 111 117 123 129 135 141 149 157 165 173 181 189 197 205 213 221 229 236 243 250 257 265 273 281 289 297 305
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] size=305, 3 4 5 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 1 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 0 3 4 6 7 8 9 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 1 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 1 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 2 4 5 6 7 8 0 1 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 2 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 2 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 2 3 4 5 6 8 0 1 2 3 4 5 6 7
+candidates[4] NULL
+
+
+Current process: COMPUTE_COUNT 7
+Instances: 
+instances[0] size=305, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8
+instances[1] size=305, 1 1 1 1 1 1 1 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 2 2 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 8 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+instances[2] NULL
+instances[3] size=305, 3 4 5 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 1 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 0 3 4 6 7 8 9 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 1 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 1 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 2 4 5 6 7 8 0 1 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 2 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 2 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 2 3 4 5 6 8 0 1 2 3 4 5 6 7
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=305, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304
+candidates_index[3] size=305, 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 10 10 10 10 10 10 10 11 11 11 11 11 11 11 12 12 12 12 12 12 12 13 13 13 13 13 13 13 14 14 14 14 14 14 14 15 15 15 15 15 15 16 16 16 16 16 16 17 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 21 21 21 21 22 22 22 22 22 22 22 22 23 23 23 23 23 23 23 23 24 24 24 24 24 24 24 24 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 26 27 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 31 32 32 32 32 32 32 32 33 33 33 33 33 33 33 34 34 34 34 34 34 34 35 35 35 35 35 35 35 36 36 36 36 36 36 36 36 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 40 40 40 40 40 40 40 40 41 41 41 41 41 41 41 41
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=306, 0 5 10 16 21 26 31 36 42 48 54 60 66 72 78 84 90 96 102 108 114 120 126 131 136 141 146 151 156 162 168 174 180 186 192 198 204 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 306 312 318 324 329 333 337 341 345 349 354 360 366 372 378 384 390 396 402 408 414 420 426 432 438 444 450 456 462 468 474 480 486 492 498 504 510 516 522 528 534 540 546 552 558 564 569 575 580 585 590 595 600 605 610 615 620 625 630 635 640 645 650 655 660 665 669 673 677 681 685 690 695 700 705 710 715 720 725 730 735 740 745 750 755 760 765 770 775 782 789 796 803 810 817 824 831 837 844 850 856 862 868 874 880 887 894 901 908 915 922 929 936 943 950 957 964 971 978 985 992 999 1006 1013 1020 1027 1034 1041 1048 1054 1060 1067 1073 1079 1085 1091 1097 1103 1110 1116 1122 1128 1134 1140 1146 1153 1160 1167 1174 1181 1188 1195 1202 1209 1216 1223 1230 1237 1244 1251 1258 1265 1272 1279 1286 1293 1300 1307 1314 1320 1326 1333 1339 1345 1351 1357 1363 1369 1375 1381 1387 1393 1399 1405 1411 1417 1423 1429 1435 1441 1447 1453 1459 1465 1471 1477 1483 1489 1494 1500 1505 1510 1515 1520 1525 1532 1539 1546 1553 1560 1567 1574 1581 1588 1595 1602 1609 1616 1623 1630 1637 1643 1649 1656 1662 1668 1674 1680 1686 1693 1700 1707 1714 1721 1728 1735 1742 1748 1754 1761 1767 1773 1779 1785 1791 1797 1803 1810 1816 1822 1828 1834 1840
+candidates_offset[3] size=43, 0 7 14 21 28 35 42 49 56 63 70 77 84 91 98 105 111 117 123 129 135 141 149 157 165 173 181 189 197 205 213 221 229 236 243 250 257 265 273 281 289 297 305
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=1840, 4 6 7 8 9 3 6 7 8 9 3 4 6 7 8 9 3 4 7 8 9 3 4 6 8 9 3 4 6 7 9 3 4 6 7 8 4 5 6 7 8 9 1 5 6 7 8 9 1 4 6 7 8 9 1 4 5 7 8 9 1 4 5 6 8 9 1 4 5 6 7 9 1 4 5 6 7 8 3 5 6 7 8 9 1 5 6 7 8 9 1 3 6 7 8 9 1 3 5 7 8 9 1 3 5 6 8 9 1 3 5 6 7 9 1 3 5 6 7 8 3 4 6 7 8 9 4 6 7 8 9 3 6 7 8 9 3 4 7 8 9 3 4 6 8 9 3 4 6 7 9 3 4 6 7 8 3 4 5 7 8 9 1 4 5 7 8 9 1 3 5 7 8 9 1 3 4 7 8 9 1 3 4 5 8 9 1 3 4 5 7 9 1 3 4 5 7 8 3 4 5 6 8 9 1 4 5 6 8 9 1 3 5 6 8 9 1 3 4 6 8 9 1 3 4 5 8 9 1 3 4 5 6 9 1 3 4 5 6 8 3 4 5 6 7 9 1 4 5 6 7 9 1 3 5 6 7 9 1 3 4 6 7 9 1 3 4 5 7 9 1 3 4 5 6 9 1 3 4 5 6 7 3 4 5 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 1 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 3 4 6 7 8 4 6 7 8 3 6 7 8 3 4 7 8 3 4 6 8 3 4 6 7 3 4 6 7 8 2 4 6 7 8 9 0 4 6 7 8 9 0 2 6 7 8 9 0 2 4 7 8 9 0 2 4 6 8 9 0 2 4 6 7 9 0 2 4 6 7 8 2 3 6 7 8 9 0 3 6 7 8 9 0 2 6 7 8 9 0 2 3 7 8 9 0 2 3 6 8 9 0 2 3 6 7 9 0 2 3 6 7 8 2 3 4 7 8 9 0 3 4 7 8 9 0 2 4 7 8 9 0 2 3 7 8 9 0 2 3 4 8 9 0 2 3 4 7 9 0 2 3 4 7 8 2 3 4 6 8 9 0 3 4 6 8 9 0 2 4 6 8 9 0 2 3 6 8 9 0 2 3 4 8 9 0 2 3 4 6 9 0 2 3 4 6 8 2 3 4 6 7 9 0 3 4 6 7 9 0 2 4 6 7 9 0 2 3 6 7 9 0 2 3 4 7 9 0 2 3 4 6 9 0 2 3 4 6 7 3 4 6 7 8 0 3 4 6 7 8 0 4 6 7 8 0 3 6 7 8 0 3 4 7 8 0 3 4 6 8 0 3 4 6 7 4 5 6 7 8 1 5 6 7 8 1 4 6 7 8 1 4 5 7 8 1 4 5 6 8 1 4 5 6 7 3 5 6 7 8 1 5 6 7 8 1 3 6 7 8 1 3 5 7 8 1 3 5 6 8 1 3 5 6 7 3 4 6 7 8 4 6 7 8 3 6 7 8 3 4 7 8 3 4 6 8 3 4 6 7 3 4 5 7 8 1 4 5 7 8 1 3 5 7 8 1 3 4 7 8 1 3 4 5 8 1 3 4 5 7 3 4 5 6 8 1 4 5 6 8 1 3 5 6 8 1 3 4 6 8 1 3 4 5 8 1 3 4 5 6 3 4 5 6 7 1 4 5 6 7 1 3 5 6 7 1 3 4 6 7 1 3 4 5 7 1 3 4 5 6 1 2 5 6 7 8 9 0 2 5 6 7 8 9 0 1 5 6 7 8 9 0 1 2 6 7 8 9 0 1 2 5 7 8 9 0 1 2 5 6 8 9 0 1 2 5 6 7 9 0 1 2 5 6 7 8 2 4 6 7 8 9 0 2 4 6 7 8 9 0 4 6 7 8 9 0 2 6 7 8 9 0 2 4 7 8 9 0 2 4 6 8 9 0 2 4 6 7 9 0 2 4 6 7 8 1 2 4 5 7 8 9 0 2 4 5 7 8 9 0 1 4 5 7 8 9 0 1 2 5 7 8 9 0 1 2 4 7 8 9 0 1 2 4 5 8 9 0 1 2 4 5 7 9 0 1 2 4 5 7 8 1 2 4 5 6 8 9 0 2 4 5 6 8 9 0 1 4 5 6 8 9 0 1 2 5 6 8 9 0 1 2 4 6 8 9 0 1 2 4 5 8 9 0 1 2 4 5 6 9 0 1 2 4 5 6 8 1 2 4 5 6 7 9 0 2 4 5 6 7 9 0 1 4 5 6 7 9 0 1 2 5 6 7 9 0 1 2 4 6 7 9 0 1 2 4 5 7 9 0 1 2 4 5 6 9 0 1 2 4 5 6 7 1 4 5 6 7 8 0 4 5 6 7 8 0 1 4 5 6 7 8 0 1 5 6 7 8 0 1 4 6 7 8 0 1 4 5 7 8 0 1 4 5 6 8 0 1 4 5 6 7 2 3 6 7 8 9 0 2 3 6 7 8 9 0 3 6 7 8 9 0 2 6 7 8 9 0 2 3 7 8 9 0 2 3 6 8 9 0 2 3 6 7 9 0 2 3 6 7 8 1 2 3 5 7 8 9 0 2 3 5 7 8 9 0 1 3 5 7 8 9 0 1 2 5 7 8 9 0 1 2 3 7 8 9 0 1 2 3 5 8 9 0 1 2 3 5 7 9 0 1 2 3 5 7 8 1 2 3 5 6 8 9 0 2 3 5 6 8 9 0 1 3 5 6 8 9 0 1 2 5 6 8 9 0 1 2 3 6 8 9 0 1 2 3 5 8 9 0 1 2 3 5 6 9 0 1 2 3 5 6 8 1 2 3 5 6 7 9 0 2 3 5 6 7 9 0 1 3 5 6 7 9 0 1 2 5 6 7 9 0 1 2 3 6 7 9 0 1 2 3 5 7 9 0 1 2 3 5 6 9 0 1 2 3 5 6 7 1 3 5 6 7 8 0 3 5 6 7 8 0 1 3 5 6 7 8 0 1 5 6 7 8 0 1 3 6 7 8 0 1 3 5 7 8 0 1 3 5 6 8 0 1 3 5 6 7 2 3 4 7 8 9 0 3 4 7 8 9 0 2 4 7 8 9 0 2 3 7 8 9 0 2 3 4 8 9 0 2 3 4 7 9 0 2 3 4 7 8 2 3 4 6 8 9 0 3 4 6 8 9 0 2 4 6 8 9 0 2 3 6 8 9 0 2 3 4 8 9 0 2 3 4 6 9 0 2 3 4 6 8 2 3 4 6 7 9 0 3 4 6 7 9 0 2 4 6 7 9 0 2 3 6 7 9 0 2 3 4 7 9 0 2 3 4 6 9 0 2 3 4 6 7 3 4 6 7 8 0 3 4 6 7 8 0 4 6 7 8 0 3 6 7 8 0 3 4 7 8 0 3 4 6 8 0 3 4 6 7 1 2 3 4 5 8 9 0 2 3 4 5 8 9 0 1 3 4 5 8 9 0 1 2 4 5 8 9 0 1 2 3 5 8 9 0 1 2 3 4 8 9 0 1 2 3 4 5 9 0 1 2 3 4 5 8 1 2 3 4 5 7 9 0 2 3 4 5 7 9 0 1 3 4 5 7 9 0 1 2 4 5 7 9 0 1 2 3 5 7 9 0 1 2 3 4 7 9 0 1 2 3 4 5 9 0 1 2 3 4 5 7 1 3 4 5 7 8 0 3 4 5 7 8 0 1 3 4 5 7 8 0 1 4 5 7 8 0 1 3 5 7 8 0 1 3 4 7 8 0 1 3 4 5 8 0 1 3 4 5 7 1 2 3 4 5 6 9 0 2 3 4 5 6 9 0 1 3 4 5 6 9 0 1 2 4 5 6 9 0 1 2 3 5 6 9 0 1 2 3 4 6 9 0 1 2 3 4 5 9 0 1 2 3 4 5 6 1 3 4 5 6 8 0 3 4 5 6 8 0 1 3 4 5 6 8 0 1 4 5 6 8 0 1 3 5 6 8 0 1 3 4 6 8 0 1 3 4 5 8 0 1 3 4 5 6 1 3 4 5 6 7 0 3 4 5 6 7 0 1 3 4 5 6 7 0 1 4 5 6 7 0 1 3 5 6 7 0 1 3 4 6 7 0 1 3 4 5 7 0 1 3 4 5 6
+candidates[3] size=305, 3 4 5 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 1 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 0 3 4 6 7 8 9 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 1 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 1 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 2 4 5 6 7 8 0 1 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 2 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 2 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 2 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 2 3 4 5 6 8 0 1 2 3 4 5 6 7
+candidates[4] NULL
+finish device 0 match, elapsed_time=11.963000ms
+consumer 0 completes match 0
+consumer 0 stops
+finish total time, elapsed_time=20.447000ms
+total count for query 0: 9724
+-------------------- m8_r8_t32_h2 @ v10_e42_t97 : -p 5 --------------------
+m: 8 t: 32 qs: 3 pn: 3 cn: 1
+equivalence classes:
+0: 0 1 
+2: 2 3 
+4: 4 
+conditions:
+0 1
+2 3
+========= P5 =========
+vertex count: 5 edge count: 8
+0: 1 2 3 4 
+1: 0 2 3 4 
+2: 0 1 3 
+3: 0 1 2 
+4: 0 1 
+conditions: 
+0: LESS_THAN(1), 
+1: LAGER_THAN(0), 
+2: LESS_THAN(3), 
+3: LAGER_THAN(2), 
+4: 
+========= Pattern =========
+root: 0 hop: 2 degree: 4
+search sequence:
+0 1 2 3 4 
+back connectivity:
+0: 
+1: 0 
+2: 0 1 
+3: 0 1 2 
+4: 0 1 
+compute execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),(MATERIALIZE,2),(COMPUTE,3),(COMPUTE,4),
+======= Plan Pattern =======
+vertex count: 5 edge count: 8
+execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(MATERIALIZE,1),(COMPUTE,2),(MATERIALIZE,2),(COMPUTE,3),(COMPUTE_COUNT,4),
+materialized vertices:()
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:(1)
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:()
+materialized vertices:(0,1)
+computed_unmaterialized_vertices:(2)
+materialized vertices:(0,1,2)
+computed_unmaterialized_vertices:()
+materialized vertices:(0,1,2)
+computed_unmaterialized_vertices:(3)
+start read csr bin file....
+uintV_size=4,uintE_size=8
+vertex_count=10,edge_count=84
+finish read csr bin file, elapsed_time=0.028ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.030000ms
+max partitioned sources num: 10
+finish view bin buffer, elapsed_time=6444.023000ms
+producer 0 gets 0
+available mem: 10854
+available mem after: 10854
+finish device 0 executor construction, elapsed_time=10.952000ms
+view bin 0: sources 10 vertices 10 edges 84
+finish view bin materialized 0, elapsed_time=12.306000ms
+producer 0 produces 0 in 0
+consumer 0 gets 0
+device 0 transfer view bin 0
+available mem for imdata: 10854
+finish device 0 memory copy, elapsed_time=0.054000ms
+consumer 0 completes transfer 0
+
+
+Current process: MATERIALIZE 0
+Instances: 
+instances[0] NULL
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 1
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: MATERIALIZE 2
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 3
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: MATERIALIZE 4
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=42, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 5
+Instances: 
+instances[0] size=291, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8
+instances[1] size=291, 1 1 1 1 1 1 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 8 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+instances[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=291, 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9 9 9 9 10 10 10 10 10 10 10 11 11 11 11 11 11 11 12 12 12 12 12 12 12 13 13 13 13 13 13 13 14 14 14 14 14 14 15 15 15 15 15 15 16 16 16 16 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 21 21 21 21 22 22 22 22 22 22 22 23 23 23 23 23 23 23 23 24 24 24 24 24 24 24 24 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 32 32 32 32 32 32 32 33 33 33 33 33 33 33 34 34 34 34 34 34 34 35 35 35 35 35 35 36 36 36 36 36 36 36 36 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 40 40 40 40 40 40 40 41 41 41 41 41 41 41
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE_COUNT 6
+Instances: 
+instances[0] size=291, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8
+instances[1] size=291, 1 1 1 1 1 1 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 2 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 4 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 8 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+instances[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] size=291, 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9 9 9 9 10 10 10 10 10 10 10 11 11 11 11 11 11 11 12 12 12 12 12 12 12 13 13 13 13 13 13 13 14 14 14 14 14 14 15 15 15 15 15 15 16 16 16 16 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 21 21 21 21 22 22 22 22 22 22 22 23 23 23 23 23 23 23 23 24 24 24 24 24 24 24 24 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 32 32 32 32 32 32 32 33 33 33 33 33 33 33 34 34 34 34 34 34 34 35 35 35 35 35 35 36 36 36 36 36 36 36 36 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 40 40 40 40 40 40 40 41 41 41 41 41 41 41
+candidates_index[3] size=291, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] size=43, 0 6 13 20 26 33 40 47 54 59 66 73 80 87 94 100 106 112 117 123 129 135 143 150 158 166 174 181 188 196 204 212 219 226 233 240 246 254 262 269 277 284 291
+candidates_offset[3] size=292, 0 5 9 12 14 15 15 20 25 29 32 34 35 35 40 45 49 52 54 55 55 60 64 67 69 70 70 75 80 84 87 89 90 90 95 100 104 107 109 110 110 115 120 124 127 129 130 130 135 140 144 147 149 150 150 154 157 159 160 160 165 169 173 176 178 179 179 184 188 192 195 197 198 198 203 207 211 214 216 217 217 222 226 230 233 235 236 236 241 245 249 252 254 255 255 260 264 267 269 270 270 274 278 281 283 284 284 288 292 295 297 298 298 302 305 307 308 308 312 316 319 321 322 322 326 330 333 335 336 336 340 344 347 349 350 350 356 361 365 369 372 374 375 375 380 384 388 391 393 394 394 400 405 409 413 416 418 419 419 425 430 434 438 441 443 444 444 450 455 459 463 466 468 469 469 475 479 483 486 488 489 489 494 498 502 505 507 508 508 514 519 523 527 530 532 533 533 539 544 548 552 555 557 558 558 564 569 573 577 580 582 583 583 589 593 597 600 602 603 603 608 612 616 619 621 622 622 627 631 635 638 640 641 641 646 650 654 657 659 660 660 665 669 672 674 675 675 681 686 690 694 697 699 700 700 706 711 715 719 722 724 725 725 731 735 739 742 744 745 745 751 756 760 764 767 769 770 770 776 780 784 787 789 790 790 796 800 804 807 809 810 810
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] size=291, 3 4 6 7 8 9 1 4 5 6 7 8 9 1 3 5 6 7 8 9 3 4 6 7 8 9 1 3 4 5 7 8 9 1 3 4 5 6 8 9 1 3 4 5 6 7 9 1 3 4 5 6 7 8 3 4 6 7 8 0 2 4 6 7 8 9 0 2 3 6 7 8 9 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 1 4 5 6 7 8 1 3 5 6 7 8 3 4 6 7 8 1 3 4 5 7 8 1 3 4 5 6 8 1 3 4 5 6 7 0 1 2 5 6 7 8 9 0 2 4 6 7 8 9 0 1 2 4 5 7 8 9 0 1 2 4 5 6 8 9 0 1 2 4 5 6 7 9 0 1 4 5 6 7 8 0 2 3 6 7 8 9 0 1 2 3 5 7 8 9 0 1 2 3 5 6 8 9 0 1 2 3 5 6 7 9 0 1 3 5 6 7 8 0 2 3 4 7 8 9 0 2 3 4 6 8 9 0 2 3 4 6 7 9 0 3 4 6 7 8 0 1 2 3 4 5 8 9 0 1 2 3 4 5 7 9 0 1 3 4 5 7 8 0 1 2 3 4 5 6 9 0 1 3 4 5 6 8 0 1 3 4 5 6 7
+candidates[3] size=810, 4 6 7 8 9 6 7 8 9 7 8 9 8 9 9 4 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9 3 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9 4 6 7 8 9 6 7 8 9 7 8 9 8 9 9 3 4 7 8 9 4 5 7 8 9 5 7 8 9 7 8 9 8 9 9 3 4 6 8 9 4 5 6 8 9 5 6 8 9 6 8 9 8 9 9 3 4 6 7 9 4 5 6 7 9 5 6 7 9 6 7 9 7 9 9 3 4 6 7 8 4 5 6 7 8 5 6 7 8 6 7 8 7 8 8 4 6 7 8 6 7 8 7 8 8 4 6 7 8 9 4 6 7 8 6 7 8 9 7 8 9 8 9 9 3 6 7 8 9 3 6 7 8 6 7 8 9 7 8 9 8 9 9 3 4 7 8 9 3 4 7 8 4 7 8 9 7 8 9 8 9 9 3 4 6 8 9 3 4 6 8 4 6 8 9 6 8 9 8 9 9 3 4 6 7 9 3 4 6 7 4 6 7 9 6 7 9 7 9 9 3 4 6 7 8 4 6 7 8 6 7 8 7 8 8 4 6 7 8 5 6 7 8 6 7 8 7 8 8 3 6 7 8 5 6 7 8 6 7 8 7 8 8 4 6 7 8 6 7 8 7 8 8 3 4 7 8 4 5 7 8 5 7 8 7 8 8 3 4 6 8 4 5 6 8 5 6 8 6 8 8 3 4 6 7 4 5 6 7 5 6 7 6 7 7 1 5 6 7 8 9 2 6 7 8 9 5 6 7 8 6 7 8 9 7 8 9 8 9 9 4 6 7 8 9 4 6 7 8 6 7 8 9 7 8 9 8 9 9 1 4 5 7 8 9 2 4 7 8 9 4 5 7 8 5 7 8 9 7 8 9 8 9 9 1 4 5 6 8 9 2 4 6 8 9 4 5 6 8 5 6 8 9 6 8 9 8 9 9 1 4 5 6 7 9 2 4 6 7 9 4 5 6 7 5 6 7 9 6 7 9 7 9 9 1 4 5 6 7 8 4 6 7 8 5 6 7 8 6 7 8 7 8 8 3 6 7 8 9 3 6 7 8 6 7 8 9 7 8 9 8 9 9 1 3 5 7 8 9 2 3 7 8 9 3 5 7 8 5 7 8 9 7 8 9 8 9 9 1 3 5 6 8 9 2 3 6 8 9 3 5 6 8 5 6 8 9 6 8 9 8 9 9 1 3 5 6 7 9 2 3 6 7 9 3 5 6 7 5 6 7 9 6 7 9 7 9 9 1 3 5 6 7 8 3 6 7 8 5 6 7 8 6 7 8 7 8 8 3 4 7 8 9 3 4 7 8 4 7 8 9 7 8 9 8 9 9 3 4 6 8 9 3 4 6 8 4 6 8 9 6 8 9 8 9 9 3 4 6 7 9 3 4 6 7 4 6 7 9 6 7 9 7 9 9 3 4 6 7 8 4 6 7 8 6 7 8 7 8 8 1 3 4 5 8 9 2 3 4 8 9 3 4 5 8 4 5 8 9 5 8 9 8 9 9 1 3 4 5 7 9 2 3 4 7 9 3 4 5 7 4 5 7 9 5 7 9 7 9 9 1 3 4 5 7 8 3 4 7 8 4 5 7 8 5 7 8 7 8 8 1 3 4 5 6 9 2 3 4 6 9 3 4 5 6 4 5 6 9 5 6 9 6 9 9 1 3 4 5 6 8 3 4 6 8 4 5 6 8 5 6 8 6 8 8 1 3 4 5 6 7 3 4 6 7 4 5 6 7 5 6 7 6 7 7
+candidates[4] NULL
+finish device 0 match, elapsed_time=5.457000ms
+consumer 0 completes match 0
+consumer 0 stops
+finish total time, elapsed_time=18.303000ms
+total count for query 0: 4130

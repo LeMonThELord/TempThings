@@ -1,0 +1,26 @@
+---------- m-1_r-1_t32_h2 @ triangle ----------
+[Timing] preprocessing starts
+[Timing] prep starts
+[Timing] prep (m8_r-1_t32_h2 @ triangle) takes 0.20 ms
+[Timing] feat starts
+[Timing] feat (m8_r-1_t32_h2 @ triangle) takes 0.10 ms
+[Timing] sepr starts
+[Timing] sepr (m8_r-1_t32_h2 @ triangle) takes 0.11 ms
+[Timing] pack starts
+[Timing] pack (m8_r-1_t32_h2 @ triangle) takes 0.10 ms
+[Timing] preprocessing (m8_r-1_t32_h2 @ triangle) takes 16.96 ms
+    Preparation:
+        CHEATING
+        after status:
+            vertex_count=None
+            edge_count=None
+    Seperation:
+        CHEATING
+    View Bin Statistics:
+        [2 hops] 1 bins:
+            bin 0: 3 nodes, 6 edges
+[Timing] rebuild_main starts
+[Timing] rebuild_main takes 21980.15 ms
+[Timing] processing starts
+[Timing] processing (m8_r8_t32_h2 @ triangle : -p 19) takes 9489.70 ms
+---------- m8_r-1_t32 @ triangle ----------

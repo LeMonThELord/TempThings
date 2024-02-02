@@ -1,0 +1,87 @@
+-------------------- m8_r8_t32_h2 @ triangle : -p 19 --------------------
+m: 8 t: 32 qs: 3 pn: 3 cn: 1
+equivalence classes:
+0: 0 
+1: 1 2 
+conditions:
+1 2
+========= P19 =========
+vertex count: 3 edge count: 2
+0: 1 2 
+1: 0 
+2: 0 
+conditions: 
+0: 
+1: LESS_THAN(2), 
+2: LAGER_THAN(1), 
+========= Pattern =========
+root: 0 hop: 1 degree: 2
+search sequence:
+0 1 2 
+back connectivity:
+0: 
+1: 0 
+2: 0 
+compute execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(COMPUTE,2),
+======= Plan Pattern =======
+vertex count: 3 edge count: 2
+execute sequence:
+(MATERIALIZE,0),(COMPUTE,1),(COMPUTE_COUNT,2),
+materialized vertices:()
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:()
+materialized vertices:(0)
+computed_unmaterialized_vertices:(1)
+start read csr bin file....
+uintV_size=4,uintE_size=8
+vertex_count=3,edge_count=6
+finish read csr bin file, elapsed_time=0.022ms
+file name: /home/zeyliu4/Y1/vsgm2024/data/synthetics/triangle.txt.bin.2.hop.vbmap
+view bin num: 1
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.032000ms
+max partitioned sources num: 3
+finish view bin buffer, elapsed_time=6432.838000ms
+producer 0 gets 0
+view bin 0: sources 3 vertices 3 edges 6
+finish view bin materialized 0, elapsed_time=6.106000ms
+producer 0 produces 0 in 0
+available mem: 10854
+available mem after: 10854
+finish device 0 executor construction, elapsed_time=10.940000ms
+consumer 0 gets 0
+device 0 transfer view bin 0
+available mem for imdata: 10854
+finish device 0 memory copy, elapsed_time=0.068000ms
+consumer 0 completes transfer 0
+Current process: COMPUTE 1
+Current process: After ComputeGeneral
+WorkContext: 0x5567d036aa00
+WorkContext->ans: 93904363235848
+WorkContext->im_data: 0x5567d0933c10
+WorkContext->im_data->GetInstances():  0x7fca9f7faf00
+WorkContext->im_data->GetInstances()[0]: 0x7fca902d1330
+WorkContext->im_data->GetCandidates(): 0x7fca9f7faf00
+WorkContext->im_data->GetCandidates()[0]: (nil)
+WorkContext->im_data->GetCandidatesIndices(): 0x7fca9f7faf00
+WorkContext->im_data->GetCandidatesIndices()[0]: (nil)
+WorkContext->im_data->GetCandidatesOffsets(): 0x7fca9f7faf00
+WorkContext->im_data->GetCandidatesOffsets()[0]: (nil)
+Current process: COMPUTE_COUNT 2
+WorkContext: 0x5567d036aa00
+WorkContext->ans: 140507976043888
+WorkContext->im_data: 0x5567d0933c10
+WorkContext->im_data->GetInstances(): 0x7fca9f7fae20
+WorkContext->im_data->GetInstances()[0]: 0x7fca902bd220
+WorkContext->im_data->GetCandidates(): 0x7fca9f7fae20
+WorkContext->im_data->GetCandidates()[0]: (nil)
+WorkContext->im_data->GetCandidatesIndices(): 0x7fca9f7fae20
+WorkContext->im_data->GetCandidatesIndices()[0]: (nil)
+WorkContext->im_data->GetCandidatesOffsets(): 0x7fca9f7fae20
+WorkContext->im_data->GetCandidatesOffsets()[0]: (nil)
+finish device 0 match, elapsed_time=5.032000ms
+consumer 0 completes match 0
+consumer 0 stops
+finish total time, elapsed_time=16.475000ms
+total count for query 0: 3

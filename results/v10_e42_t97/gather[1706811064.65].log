@@ -1,0 +1,32 @@
+---------- m8_r-1_t32 @ v10_e42_t97 ----------
+[Timing] preprocessing starts
+[Timing] prep starts
+[Timing] prep (m8_r-1_t32 @ v10_e42_t97) takes 0.21 ms
+[Timing] feat starts
+[Timing] feat (m8_r-1_t32 @ v10_e42_t97) takes 0.09 ms
+[Timing] sepr starts
+[Timing] sepr (m8_r-1_t32 @ v10_e42_t97) takes 0.09 ms
+[Timing] pack starts
+[Timing] pack (m8_r-1_t32_h2 @ v10_e42_t97) takes 0.09 ms
+[Timing] preprocessing (m8_r-1_t32_h2 @ v10_e42_t97) takes 44.68 ms
+    Preparation:
+        CHEATING
+        after status:
+            vertex_count=None
+            edge_count=None
+    Seperation:
+        CHEATING
+    View Bin Statistics:
+        [2 hops] 1 bins:
+            bin 0: 10 nodes, 84 edges
+[Timing] rebuild_main starts
+[Timing] rebuild_main takes 20790.52 ms
+[Timing] processing starts
+[Timing] processing (m8_r8_t32_h2 @ v10_e42_t97 : -p 0) takes 8136.86 ms
+[Timing] processing starts
+[Timing] processing (m8_r8_t32_h2 @ v10_e42_t97 : -p 2) takes 8538.23 ms
+[Timing] processing starts
+[Timing] processing (m8_r8_t32_h2 @ v10_e42_t97 : -p 4) takes 8587.97 ms
+[Timing] processing starts
+[Timing] processing (m8_r8_t32_h2 @ v10_e42_t97 : -p 5) takes 9591.90 ms
+---------- m8_r-1_t32 @ v10_e42_t97 ----------
