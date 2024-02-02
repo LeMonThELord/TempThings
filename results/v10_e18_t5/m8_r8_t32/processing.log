@@ -40,21 +40,21 @@ computed_unmaterialized_vertices:()
 start read csr bin file....
 uintV_size=4,uintE_size=8
 vertex_count=10,edge_count=36
-finish read csr bin file, elapsed_time=0.06ms
-finish loaded view bin partition file, 1 view bins, elapsed_time=0.047000ms
+finish read csr bin file, elapsed_time=0.024ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.039000ms
 max partitioned sources num: 10
-finish view bin buffer, elapsed_time=6389.405000ms
-producer 1 gets 0
+finish view bin buffer, elapsed_time=7141.597000ms
+producer 0 gets 0
 view bin 0: sources 10 vertices 10 edges 36
-finish view bin materialized 0, elapsed_time=7.194000ms
-producer 1 produces 0 in 0
+finish view bin materialized 0, elapsed_time=7.506000ms
+producer 0 produces 0 in 0
 available mem: 10854
 available mem after: 10854
-finish device 0 executor construction, elapsed_time=11.585000ms
+finish device 0 executor construction, elapsed_time=13.212000ms
 consumer 0 gets 0
 device 0 transfer view bin 0
 available mem for imdata: 10854
-finish device 0 memory copy, elapsed_time=0.113000ms
+finish device 0 memory copy, elapsed_time=0.092000ms
 consumer 0 completes transfer 0
 
 
@@ -96,7 +96,7 @@ candidates[1] NULL
 candidates[2] NULL
 
 
-Current process: MATERIALIZE 2
+Current process: MATERIALIZE 1
 Instances: 
 instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
 instances[1] NULL
@@ -115,7 +115,7 @@ candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
 candidates[2] NULL
 
 
-Current process: COMPUTE_COUNT 3
+Current process: COMPUTE_COUNT 2
 Instances: 
 instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
 instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
@@ -132,10 +132,10 @@ Candidates:
 candidates[0] NULL
 candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
 candidates[2] NULL
-finish device 0 match, elapsed_time=5.706000ms
+finish device 0 match, elapsed_time=5.419000ms
 consumer 0 completes match 0
 consumer 0 stops
-finish total time, elapsed_time=17.847000ms
+finish total time, elapsed_time=19.207000ms
 total count for query 0: 5
 -------------------- m8_r8_t32_h2 @ v10_e18_t5 : -p 2 --------------------
 m: 8 t: 32 qs: 3 pn: 3 cn: 1
@@ -184,21 +184,21 @@ computed_unmaterialized_vertices:(2)
 start read csr bin file....
 uintV_size=4,uintE_size=8
 vertex_count=10,edge_count=36
-finish read csr bin file, elapsed_time=0.026ms
-finish loaded view bin partition file, 1 view bins, elapsed_time=0.033000ms
+finish read csr bin file, elapsed_time=0.025ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.032000ms
 max partitioned sources num: 10
-finish view bin buffer, elapsed_time=6102.104000ms
+finish view bin buffer, elapsed_time=7997.754000ms
 producer 0 gets 0
 view bin 0: sources 10 vertices 10 edges 36
-finish view bin materialized 0, elapsed_time=9.631000ms
+finish view bin materialized 0, elapsed_time=9.782000ms
 producer 0 produces 0 in 0
 available mem: 10854
 available mem after: 10854
-finish device 0 executor construction, elapsed_time=11.383000ms
+finish device 0 executor construction, elapsed_time=12.992000ms
 consumer 0 gets 0
 device 0 transfer view bin 0
 available mem for imdata: 10854
-finish device 0 memory copy, elapsed_time=0.094000ms
+finish device 0 memory copy, elapsed_time=0.050000ms
 consumer 0 completes transfer 0
 
 
@@ -248,7 +248,7 @@ candidates[2] NULL
 candidates[3] NULL
 
 
-Current process: MATERIALIZE 2
+Current process: MATERIALIZE 1
 Instances: 
 instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
 instances[1] NULL
@@ -271,7 +271,7 @@ candidates[2] NULL
 candidates[3] NULL
 
 
-Current process: COMPUTE 3
+Current process: COMPUTE 2
 Instances: 
 instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
 instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
@@ -294,7 +294,7 @@ candidates[2] NULL
 candidates[3] NULL
 
 
-Current process: COMPUTE_COUNT 4
+Current process: COMPUTE_COUNT 3
 Instances: 
 instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
 instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
@@ -315,10 +315,10 @@ candidates[0] NULL
 candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
 candidates[2] size=15, 8 9 6 8 5 3 5 4 8 5 0 0 0 0 1
 candidates[3] NULL
-finish device 0 match, elapsed_time=11.619000ms
+finish device 0 match, elapsed_time=4.641000ms
 consumer 0 completes match 0
 consumer 0 stops
-finish total time, elapsed_time=23.620000ms
+finish total time, elapsed_time=18.182000ms
 total count for query 0: 3
 -------------------- m8_r8_t32_h2 @ v10_e18_t5 : -p 4 --------------------
 m: 8 t: 32 qs: 3 pn: 3 cn: 1
@@ -376,21 +376,21 @@ computed_unmaterialized_vertices:(2)
 start read csr bin file....
 uintV_size=4,uintE_size=8
 vertex_count=10,edge_count=36
-finish read csr bin file, elapsed_time=0.028ms
-finish loaded view bin partition file, 1 view bins, elapsed_time=0.038000ms
+finish read csr bin file, elapsed_time=0.024ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.027000ms
 max partitioned sources num: 10
-finish view bin buffer, elapsed_time=6340.638000ms
+finish view bin buffer, elapsed_time=6728.102000ms
 producer 0 gets 0
 view bin 0: sources 10 vertices 10 edges 36
-finish view bin materialized 0, elapsed_time=4.046000ms
+finish view bin materialized 0, elapsed_time=2.563000ms
 producer 0 produces 0 in 0
 available mem: 10854
 available mem after: 10854
-finish device 0 executor construction, elapsed_time=14.541000ms
+finish device 0 executor construction, elapsed_time=13.298000ms
 consumer 0 gets 0
 device 0 transfer view bin 0
 available mem for imdata: 10854
-finish device 0 memory copy, elapsed_time=0.045000ms
+finish device 0 memory copy, elapsed_time=0.043000ms
 consumer 0 completes transfer 0
 
 
@@ -448,7 +448,7 @@ candidates[3] NULL
 candidates[4] NULL
 
 
-Current process: MATERIALIZE 2
+Current process: MATERIALIZE 1
 Instances: 
 instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
 instances[1] NULL
@@ -458,6 +458,33 @@ instances[4] NULL
 CandidatesIndices: 
 candidates_index[0] NULL
 candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+candidates_index[3] NULL
+candidates_index[4] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 6 9 12 13 14 17 17 18 18 18
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+candidates_offset[4] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+candidates[2] NULL
+candidates[3] NULL
+candidates[4] NULL
+
+
+Current process: COMPUTE 2
+Instances: 
+instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
+instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+instances[2] NULL
+instances[3] NULL
+instances[4] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
 candidates_index[2] NULL
 candidates_index[3] NULL
 candidates_index[4] NULL
@@ -485,33 +512,6 @@ instances[4] NULL
 CandidatesIndices: 
 candidates_index[0] NULL
 candidates_index[1] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
-candidates_index[2] NULL
-candidates_index[3] NULL
-candidates_index[4] NULL
-CandidatesOffsets: 
-candidates_offset[0] NULL
-candidates_offset[1] size=11, 0 6 9 12 13 14 17 17 18 18 18
-candidates_offset[2] NULL
-candidates_offset[3] NULL
-candidates_offset[4] NULL
-Candidates: 
-candidates[0] NULL
-candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
-candidates[2] NULL
-candidates[3] NULL
-candidates[4] NULL
-
-
-Current process: COMPUTE 4
-Instances: 
-instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
-instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
-instances[2] NULL
-instances[3] NULL
-instances[4] NULL
-CandidatesIndices: 
-candidates_index[0] NULL
-candidates_index[1] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
 candidates_index[2] size=18, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
 candidates_index[3] NULL
 candidates_index[4] NULL
@@ -529,7 +529,7 @@ candidates[3] NULL
 candidates[4] NULL
 
 
-Current process: MATERIALIZE 5
+Current process: MATERIALIZE 3
 Instances: 
 instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
 instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
@@ -556,7 +556,7 @@ candidates[3] size=60, 4 5 6 8 9 3 5 6 8 9 3 4 6 8 9 3 4 5 8 9 3 4 5 6 9 3 4 5 6
 candidates[4] NULL
 
 
-Current process: FILTER_COMPUTE 6
+Current process: FILTER_COMPUTE 2
 Instances: 
 instances[0] size=60, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 2 2 2 2 2 2 3 3 4 4 5 5 5 5 5 5 5 5 5 5 5 5 7 7
 instances[1] size=60, 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5 6 6 6 6 6 8 8 8 8 8 9 9 9 9 9 5 5 8 8 9 9 3 3 4 4 7 7 8 8 9 9 6 6 6 6 7 7 7 7 8 8 8 8 9 9
@@ -583,7 +583,7 @@ candidates[3] size=60, 4 5 6 8 9 3 5 6 8 9 3 4 6 8 9 3 4 5 8 9 3 4 5 6 9 3 4 5 6
 candidates[4] NULL
 
 
-Current process: COMPUTE_COUNT 7
+Current process: COMPUTE_COUNT 4
 Instances: 
 instances[0] size=60, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 2 2 2 2 2 2 3 3 4 4 5 5 5 5 5 5 5 5 5 5 5 5 7 7
 instances[1] size=60, 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5 6 6 6 6 6 8 8 8 8 8 9 9 9 9 9 5 5 8 8 9 9 3 3 4 4 7 7 8 8 9 9 6 6 6 6 7 7 7 7 8 8 8 8 9 9
@@ -608,10 +608,10 @@ candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
 candidates[2] size=45, 8 8 8 8 9 9 9 9 6 8 6 8 8 6 6 8 5 5 5 5 5 3 5 3 3 5 3 5 4 4 4 4 8 5 0 0 0 0 0 1 0 0 1 0 1
 candidates[3] size=60, 4 5 6 8 9 3 5 6 8 9 3 4 6 8 9 3 4 5 8 9 3 4 5 6 9 3 4 5 6 8 8 9 5 9 5 8 4 7 3 7 3 4 0 2 0 2 0 1 7 8 0 1 6 8 0 1 6 7 2 5
 candidates[4] NULL
-finish device 0 match, elapsed_time=5.824000ms
+finish device 0 match, elapsed_time=6.180000ms
 consumer 0 completes match 0
 consumer 0 stops
-finish total time, elapsed_time=20.858000ms
+finish total time, elapsed_time=20.164000ms
 total count for query 0: 21
 -------------------- m8_r8_t32_h2 @ v10_e18_t5 : -p 5 --------------------
 m: 8 t: 32 qs: 3 pn: 3 cn: 1
@@ -669,20 +669,20 @@ start read csr bin file....
 uintV_size=4,uintE_size=8
 vertex_count=10,edge_count=36
 finish read csr bin file, elapsed_time=0.025ms
-finish loaded view bin partition file, 1 view bins, elapsed_time=0.034000ms
+finish loaded view bin partition file, 1 view bins, elapsed_time=0.028000ms
 max partitioned sources num: 10
-finish view bin buffer, elapsed_time=6180.796000ms
-producer 1 gets 0
+finish view bin buffer, elapsed_time=6394.547000ms
+producer 0 gets 0
 view bin 0: sources 10 vertices 9 edges 33
-finish view bin materialized 0, elapsed_time=11.109000ms
-producer 1 produces 0 in 0
+finish view bin materialized 0, elapsed_time=7.155000ms
+producer 0 produces 0 in 0
 available mem: 10854
 available mem after: 10854
-finish device 0 executor construction, elapsed_time=11.711000ms
+finish device 0 executor construction, elapsed_time=9.312000ms
 consumer 0 gets 0
 device 0 transfer view bin 0
 available mem for imdata: 10854
-finish device 0 memory copy, elapsed_time=0.144000ms
+finish device 0 memory copy, elapsed_time=0.090000ms
 consumer 0 completes transfer 0
 
 
@@ -740,7 +740,7 @@ candidates[3] NULL
 candidates[4] NULL
 
 
-Current process: MATERIALIZE 2
+Current process: MATERIALIZE 1
 Instances: 
 instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
 instances[1] NULL
@@ -767,7 +767,7 @@ candidates[3] NULL
 candidates[4] NULL
 
 
-Current process: COMPUTE 3
+Current process: COMPUTE 2
 Instances: 
 instances[0] size=15, 0 0 0 0 0 0 1 1 1 3 4 5 5 5 7
 instances[1] size=15, 3 4 5 6 8 9 5 8 9 8 9 6 7 8 9
@@ -794,7 +794,7 @@ candidates[3] NULL
 candidates[4] NULL
 
 
-Current process: MATERIALIZE 4
+Current process: MATERIALIZE 2
 Instances: 
 instances[0] size=15, 0 0 0 0 0 0 1 1 1 3 4 5 5 5 7
 instances[1] size=15, 3 4 5 6 8 9 5 8 9 8 9 6 7 8 9
@@ -821,7 +821,7 @@ candidates[3] NULL
 candidates[4] NULL
 
 
-Current process: COMPUTE 5
+Current process: COMPUTE 3
 Instances: 
 instances[0] size=15, 0 0 0 0 0 0 0 0 1 1 3 4 5 5 5
 instances[1] size=15, 3 4 5 5 6 8 8 9 5 8 8 9 6 8 8
@@ -846,8 +846,8 @@ candidates[1] size=15, 3 4 5 6 8 9 5 8 9 8 9 6 7 8 9
 candidates[2] size=15, 8 9 6 8 5 3 5 4 8 5 0 0 0 0 1
 candidates[3] NULL
 candidates[4] NULL
-finish device 0 match, elapsed_time=6.089000ms
+finish device 0 match, elapsed_time=8.302000ms
 consumer 0 completes match 0
 consumer 0 stops
-finish total time, elapsed_time=18.432000ms
+finish total time, elapsed_time=18.146000ms
 total count for query 0: 0
