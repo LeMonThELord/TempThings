@@ -1,0 +1,113 @@
+Current process: MATERIALIZE 0
+Instances: 
+instances[0] NULL
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: COMPUTE 1
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: MATERIALIZE 2
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 6 9 12 13 14 17 17 18 18 18
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: COMPUTE 3
+Instances: 
+instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
+instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
+candidates_index[2] NULL
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 6 9 12 13 14 17 17 18 18 18
+candidates_offset[2] NULL
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+candidates[2] NULL
+candidates[3] NULL
+
+
+Current process: COMPUTE_COUNT 4
+Instances: 
+instances[0] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
+instances[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+instances[2] NULL
+instances[3] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=18, 0 0 0 0 0 0 1 1 1 2 2 2 3 4 5 5 5 7
+candidates_index[2] size=18, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
+candidates_index[3] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 6 9 12 13 14 17 17 18 18 18
+candidates_offset[2] size=19, 0 1 2 4 5 7 8 9 10 10 10 10 10 11 12 13 13 15 15
+candidates_offset[3] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=18, 3 4 5 6 8 9 5 8 9 3 4 7 8 9 6 7 8 9
+candidates[2] size=15, 8 9 6 8 5 3 5 4 8 5 0 0 0 0 1
+candidates[3] NULL

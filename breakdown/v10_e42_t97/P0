@@ -1,0 +1,74 @@
+Current process: MATERIALIZE 0
+Instances: 
+instances[0] NULL
+instances[1] NULL
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+
+
+Current process: COMPUTE 1
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] NULL
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] NULL
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] NULL
+candidates[2] NULL
+
+
+Current process: MATERIALIZE 2
+Instances: 
+instances[0] size=10, 0 1 2 3 4 5 6 7 8 9
+instances[1] NULL
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=10, 0 1 2 3 4 5 6 7 8 9
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
+
+
+Current process: COMPUTE_COUNT 3
+Instances: 
+instances[0] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+instances[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+instances[2] NULL
+CandidatesIndices: 
+candidates_index[0] NULL
+candidates_index[1] size=42, 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 6 6 6 7 7 8
+candidates_index[2] NULL
+CandidatesOffsets: 
+candidates_offset[0] NULL
+candidates_offset[1] size=11, 0 8 15 21 27 32 36 39 41 42 42
+candidates_offset[2] NULL
+Candidates: 
+candidates[0] NULL
+candidates[1] size=42, 1 3 4 5 6 7 8 9 2 3 4 6 7 8 9 3 4 5 6 7 8 4 5 6 7 8 9 5 6 7 8 9 6 7 8 9 7 8 9 8 9 9
+candidates[2] NULL
